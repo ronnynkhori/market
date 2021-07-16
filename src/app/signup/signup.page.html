@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="center">
+    <img src="../../assets/img/logo.png" alt="" />
+  </div>
+  <div class="inputfields">
+    <ion-list>
+
+      <ion-item lines="none" style="--background: #eeeeee; border-radius: 2px; margin-bottom: 5px;">
+        <ion-input placeholder="Username" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" style="--background: #eeeeee; border-radius: 2px; margin-bottom: 5px;">
+        <ion-input placeholder="Email" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" style="--background: #eeeeee; border-radius: 2px; margin-bottom: 5px;">
+        <ion-input placeholder="Password" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" style="--background: #eeeeee; border-radius: 2px; margin-bottom: 5px;">
+        <ion-input placeholder="Confirm Password" type="password"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>
+          <p textwrap style="color: #db4a39; font-size: small; text-align: center;">By tapping on Sign up you agree on
+          <a routerLink>Terms of Service</a>.
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-button expand="block" size="medium" (click)="login()">Sign up</ion-button>
+
+      <div style="height: 60px;"></div>
+
+    </ion-list>
+  </div>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-label class="ion-padding" (click)="login()">
+      <p style="text-align: center;">Already have an account? <strong style="color: #db4a39;">Login</strong></p>
+    </ion-label>
+  </ion-toolbar>
+</ion-footer>

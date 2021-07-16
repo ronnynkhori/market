@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div class="center">
+    <img src="../../assets/img/logo.png" alt="" />
+  </div>
+  <div class="inputfields">
+    <ion-list>
+
+      <ion-item lines="none" style="--background: #eeeeee; border-radius: 2px; margin-bottom: 5px;">
+        <ion-input placeholder="Username" type="text"></ion-input>
+      </ion-item>
+      <ion-item lines="none" style="--background: #eeeeee; border-radius: 2px; margin-bottom: 5px;">
+        <ion-input placeholder="Password" type="password"></ion-input>
+      </ion-item>
+      <ion-item lines="none" (click)="forgotPassword()">
+
+        <ion-checkbox checked></ion-checkbox>
+        <ion-label style="padding-left: 5px;">Remember me</ion-label>
+
+        <ion-label slot="end" >
+          <p style="text-align: right; color: #db4a39;" color="primary" >Forgort Password?</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-button expand="block"  size="medium" (click)="login()">Login</ion-button>
+
+      <div style="height: 60px;"></div>
+
+      <ion-button expand="block"  style="--background: #3B5998; color: #ffffff;">Facebook</ion-button>
+      <ion-button expand="block"  style="--background: #db4a39;">Google</ion-button>
+      <ion-button expand="block"  style="--background: #1DA1F2;">Twitter</ion-button>
+
+
+
+
+    </ion-list>
+  </div>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-label class="ion-padding" (click)="signup()">
+      <p style="text-align: center;">Don't have an account? <strong style="color: #db4a39;">Sign up</strong></p>
+    </ion-label>
+  </ion-toolbar>
+</ion-footer>
