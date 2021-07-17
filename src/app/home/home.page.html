@@ -1,12 +1,10 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button slot="start">
-        <ion-icon color="primary" slot="icon-only" name="menu"></ion-icon>
-      </ion-button>
+        <ion-menu-button color="primary"></ion-menu-button>
     </ion-buttons>
     <ion-buttons slot="secondary">
-      <ion-button>
+      <ion-button (click)="notifications()">
         <ion-icon color="primary" slot="icon-only" name="notifications"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -17,43 +15,96 @@
 </ion-header>
 <ion-content>
   <!-- Searchbar with a cancel button and custom cancel button text -->
-  <ion-searchbar placeholder="Search products"></ion-searchbar>
+  <ion-searchbar placeholder="Search products" style="border: none; box-shadow: none;"></ion-searchbar>
+  <ion-segment scrollable value="heart">
+    <ion-segment-button value="home">
+      <ion-label>Hardware</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="heart">
+      <ion-label>Electronics</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="pin">
+      <ion-label>Foods</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="star">
+      <ion-label>Camping</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="call">
+      <ion-label>Automotive</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
   <div>
-    <ion-list-header>
+    <ion-list-header style="border-top: #eeeeee 1px solid;">
       <ion-label>Most Liked</ion-label>
-      <ion-button>View All</ion-button>
+      <ion-button (click)="viewAll()">View All</ion-button>
     </ion-list-header>
-    <ion-list>
-      <ion-item line="none">
+    <ion-slides [options]=slideOpts style="border-bottom: #eeeeee 1px solid;">
+      <ion-slide *ngFor="let item of [].constructor(10)" style="width: 200px;;" (click)="detailedView()">
         <div style="width: 150px; height: 200px;">
-          <ion-grid style="background-color: green; height: 100%; display: flex; flex-flow: column;">
-            <ion-row
-              style="width: 100%; height: 70%; background-color: gray; padding:0; margin: 0; position: relative;">
-              <ion-col>
-                <div style="position: absolute; left: 0%; top: 0%;">
-                  <ion-img src="../../assets/img/logo.png" width="60%" height="60%"></ion-img>
-                </div>
+          <ion-grid style=" height: 100%; width: 100%;">
+            <ion-row style="width: 100%; height: 68%; padding:0; margin: 0; position: relative;">
+              <ion-col style="height: 100%; width: 100%;">
+
+                <ion-img src="../../assets/svg/product.svg" style="width:100%; height:100%"></ion-img>
+
               </ion-col>
             </ion-row>
-            <ion-row style="width: 100%; height: 30%; background-color: rgb(119, 91, 91); padding:0; margin: 0;">
-              <ion-col>
-                <ion-label>Label</ion-label>
+            <ion-row style="width: 100%; height: 30%; padding:0; margin: 0;">
+              <ion-col class="ion-no-padding">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label>
+                    <strong>
+                      <p>Product 1</p>
+                    </strong>
+                    <p>BWP 0.00</p>
+                  </ion-label>
+                </ion-item>
               </ion-col>
             </ion-row>
           </ion-grid>
         </div>
-      </ion-item>
-    </ion-list>
+
+      </ion-slide>
+
+    </ion-slides>
   </div>
 
   <div>
     <ion-list-header>
       <ion-label>Categories</ion-label>
-      <ion-button>View All</ion-button>
+      <ion-button (click)="viewAll()">View All</ion-button>
     </ion-list-header>
-    <ion-list>
+    <ion-slides [options]=slideOpts2 style="border-bottom: #eeeeee 1px solid; ">
+      <ion-slide *ngFor="let item of [].constructor(10)" style="width: 200px;" (click)="detailedView()">
+        <div style="width: 150px; height: 200px;">
+          <ion-grid style=" height: 100%;">
+            <ion-row
+              style="width: 100%; height: 68%; background-color: #eeeeee; padding:0; margin: 0; position: relative;">
+              <ion-col style="height: 100%; width: 100%;">
+                <div class="center">
+                  <img src="../../assets/svg/category.svg" alt="" />
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row style="width: 100%; height: 30%; padding:0; margin: 0;">
+              <ion-col class="ion-no-padding">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-label>
+                    <strong>
+                      <p>category</p>
+                    </strong>
+                    <p>220 items</p>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
 
-    </ion-list>
+      </ion-slide>
+
+    </ion-slides>
   </div>
 
 </ion-content>

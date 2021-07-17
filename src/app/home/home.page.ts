@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  slideOpts = {
+    slidesPerView: 3.1,
   }
 
+  slideOpts2 = {
+    slidesPerView: 4.1,
+  }
+
+  ngOnInit() {}
+
+  notifications() {
+    this.router.navigate(['notifications'])
+  }
+
+  detailedView() {
+    this.router.navigate(['item-detail'], { replaceUrl: false })
+  }
+
+  viewAll() {
+    this.router.navigate(['item-list'], { replaceUrl: false })
+  }
 }
